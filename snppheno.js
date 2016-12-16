@@ -1,8 +1,10 @@
 $(document).ready(function() {
     
+    
+    
   function fetch(query) {
     return $.ajax({
-      url: '//en.wikipedia.org/w/api.php',
+      url: 'http://rest.ensembl.org/',
       data: {
         action: 'query',
         list: 'search',
@@ -14,6 +16,7 @@ $(document).ready(function() {
     });
   }
 
+    /*
   function render(json) {
     var html = "";
 
@@ -31,16 +34,24 @@ $(document).ready(function() {
     $("#resultsbox").show();
     $("#resultsbox").html(html);
   }
-
+*/
+    
   $("#input").on("submit", function(event) {
     
-      console.log($("#inputbox").val());
+    //console.log($("#inputbox").val());
       
-    event.preventDefault();
-    var query = $("#inputbox").val();
+    //event.preventDefault();      
+    var query = $("#inputbox").val(); 
+    fetch(query);  
+    
+      /*
     fetch(query).done(function(data) {
       render(data.query.search);
     });
+    */
+      
+
+      
   });
 
 });
