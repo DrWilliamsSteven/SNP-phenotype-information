@@ -1,8 +1,7 @@
-$(document).ready(function() {
+$(document).ready(function() {  
     
     
-    
-  function fetch(query) {
+  var fetch = function(query) {
     return $.ajax({
       url: 'http://rest.ensembl.org/',
       data: {
@@ -14,7 +13,7 @@ $(document).ready(function() {
       },
       dataType: 'jsonp',
     });
-  }
+}
 
     /*
   function render(json) {
